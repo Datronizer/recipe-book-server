@@ -1,4 +1,4 @@
-import { DataSourceOptions } from 'typeorm/data-source';
+import { DataSourceOptions } from 'typeorm';
 import * as dotenv from 'dotenv';
 
 dotenv.config({ path: '.env' });

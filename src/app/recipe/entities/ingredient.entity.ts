@@ -1,5 +1,5 @@
 import { BaseEntity } from "src/app/base/entities/base.entity";
-import { Column, OneToMany } from "typeorm";
+import { Column, Entity, OneToMany } from "typeorm";
 import { Nutrient } from "../abstract/nutrient";
 import { RecipeIngredientEntity } from "./recipe-ingredient.entity";
 
@@ -8,6 +8,7 @@ import { RecipeIngredientEntity } from "./recipe-ingredient.entity";
  * This is used to view nutrients and calories
  * It is not used to store the amount of the ingredient in a recipe (IngredientAmtEntity is used for that)
  */
+@Entity({ name: "ingredient" })
 export class IngredientEntity extends BaseEntity
 {
     @Column({ type: "text" })
@@ -16,11 +17,11 @@ export class IngredientEntity extends BaseEntity
     @Column({ type: "text", nullable: true })
     description?: string;
 
-    @Column({ type: "number" })
+    @Column({ type: "int" })
     calories: number;
 
-    @Column({ type: "array" })
-    nutrients: Nutrient[];
+    // @Column()
+    // nutrients: Nutrient[];
 
     @OneToMany(() => RecipeIngredientEntity, r => r.ingredient)
     recipeIngredientLink: RecipeIngredientEntity;

@@ -1,8 +1,9 @@
 import { BaseEntity } from "src/app/base/entities/base.entity";
-import { IngredientEntity } from "src/app/ingredient/entities/ingredient.entity";
-import { RecipeIngredientEntity } from "src/app/ingredient/entities/recipe-ingredient.entity";
-import { Column, OneToMany } from "typeorm";
+import { RecipeIngredientEntity } from "src/app/recipe/entities/recipe-ingredient.entity";
+import { Column, Entity, OneToMany } from "typeorm";
 
+
+@Entity({ name: "recipe" })
 export class RecipeEntity extends BaseEntity
 {
     // Define properties for the Recipe entity

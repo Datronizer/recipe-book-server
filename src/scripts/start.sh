@@ -1,3 +1,7 @@
+
+
+
+
 # Silly goose, you have to terminate containers before starting them again
 echo "Stopping containers...";
 docker stop recipe-book-server-admin;
@@ -55,4 +59,4 @@ else
 fi
 
 
-npm run start:dev
+# npm run start:dev

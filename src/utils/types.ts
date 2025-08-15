@@ -5,3 +5,6 @@ export type UUID = string;
 export const generateUUID = (): UUID => {
     return uuidv4() as UUID;
 };
+
+
+export type PrimaryKey = UUID;

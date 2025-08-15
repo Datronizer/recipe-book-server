@@ -1,11 +1,10 @@
-import { UUID } from "@/utils/types";
+import { PrimaryKey } from "@/utils/types";
 import { Column, PrimaryGeneratedColumn, BaseEntity as Base } from "typeorm";
 
 export abstract class BaseEntity extends Base
 {
     @PrimaryGeneratedColumn("uuid")
-    id: UUID;
-
+    id: PrimaryKey;
 
     @Column()
     createdAt: Date;

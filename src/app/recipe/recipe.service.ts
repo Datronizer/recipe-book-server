@@ -19,7 +19,8 @@ export class RecipeService
 
   create(createRecipeDto: CreateRecipeDto)
   {
-    return 'This action adds a new recipe';
+    console.log("called")
+    return this.recipeRepository.save(createRecipeDto);
   }
 
   findAll()

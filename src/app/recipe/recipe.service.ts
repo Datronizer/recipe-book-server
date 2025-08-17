@@ -19,13 +19,13 @@ export class RecipeService
 
   create(createRecipeDto: CreateRecipeDto)
   {
-    console.log("called")
+    console.log()
     return this.recipeRepository.save(createRecipeDto);
   }
 
   findAll()
   {
-    return `This action returns all recipe`;
+    return this.recipeRepository.find();
   }
 
   findOne(id: number)

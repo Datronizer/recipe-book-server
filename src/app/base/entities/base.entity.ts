@@ -6,8 +6,8 @@ export abstract class BaseEntity extends Base
     @PrimaryGeneratedColumn("uuid")
     id: PrimaryKey;
 
-    @Column()
+    @Column({ type: "timestamptz", default: () => "CURRENT_TIMESTAMP" })
     createdAt: Date;
-    @Column()
+    @Column({ type: "timestamptz", default: () => "CURRENT_TIMESTAMP" })
     updatedAt: Date;
 }

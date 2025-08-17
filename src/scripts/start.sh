@@ -1,7 +1,6 @@
 
 
 
-
 # Silly goose, you have to terminate containers before starting them again
 echo "Stopping containers...";
 docker stop recipe-book-server-admin;
@@ -14,11 +13,13 @@ docker start recipe-book-server;
 docker start recipe-book-server-admin;
 
 
+docker network create recipe-book-network;
 
 ## Apparently `run` creates containers, so this section is for creating
 # Fire up container for Postgres first
 create_postgres_container() {
   docker run \
+    --network recipe-book-network \
     --name recipe-book-server \
       -e POSTGRES_USER=root \
       -e POSTGRES_PASSWORD=root \
@@ -30,6 +31,7 @@ create_postgres_container() {
 # Fire up PGAdmin
 create_pgadmin_container() {
   docker run \
+    --network recipe-book-network \
     --name recipe-book-server-admin \
       -e PGADMIN_DEFAULT_EMAIL=admin@admin.com \
       -e PGADMIN_DEFAULT_PASSWORD=admin \

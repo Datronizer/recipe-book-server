@@ -9,8 +9,9 @@ export class RecipeController
   constructor(private readonly recipeService: RecipeService) { }
 
   @Post()
-  create(@Body() createRecipeDto: CreateRecipeDto)
+  create(@Body("recipe") createRecipeDto: CreateRecipeDto)
   {
+    console.log(createRecipeDto)
     return this.recipeService.create(createRecipeDto);
   }
 

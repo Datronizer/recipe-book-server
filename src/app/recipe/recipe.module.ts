@@ -4,7 +4,7 @@ import { RecipeController } from './recipe.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { RecipeEntity } from './entities/recipe.entity';
 import { RecipeIngredientEntity } from './entities/recipe-ingredient.entity';
-import { IngredientEntity } from './entities/ingredient.entity';
+import { IngredientEntity } from 'src/app/ingredient/entities/ingredient.entity';
 
 @Module({
   imports: [

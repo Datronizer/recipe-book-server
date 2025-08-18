@@ -1,6 +1,7 @@
 import { BaseEntity } from "src/app/base/entities/base.entity";
 import { RecipeIngredientEntity } from "src/app/recipe/entities/recipe-ingredient.entity";
 import { Column, Entity, OneToMany } from "typeorm";
+import { IngredientNutrientEntity } from "./ingredient-nutrient.entity";
 
 /**
  * This entity represents 1 ingredient
@@ -19,9 +20,9 @@ export class IngredientEntity extends BaseEntity
     @Column({ type: "int" })
     calories: number;
 
-    // @Column()
-    // nutrients: Nutrient[];
+    @OneToMany(() => IngredientNutrientEntity, i => i.ingredient)
+    ingredientNutrientLink: IngredientNutrientEntity[];
 
     @OneToMany(() => RecipeIngredientEntity, r => r.ingredient)
-    recipeIngredientLink: RecipeIngredientEntity;
+    recipeIngredientLink: RecipeIngredientEntity[];
 }

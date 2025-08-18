@@ -6,11 +6,13 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { envService } from './env/env.service';
 import { UserModule } from './user/user.module';
 import { LoggerMiddleware } from 'src/middleware/LoggerMiddleware';
+import { IngredientModule } from './ingredient/ingredient.module';
 
 @Module({
   imports: [
     RecipeModule,
     UserModule,
+    IngredientModule,
 
     TypeOrmModule.forRoot(envService.getDataSourceOptions()),
   ],

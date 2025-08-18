@@ -3,7 +3,7 @@ import { CreateRecipeDto } from './dto/create-recipe.dto';
 import { UpdateRecipeDto } from './dto/update-recipe.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { RecipeEntity } from './entities/recipe.entity';
-import { IngredientEntity } from './entities/ingredient.entity';
+import { IngredientEntity } from 'src/app/ingredient/entities/ingredient.entity';
 import { Repository } from 'typeorm';
 import { PrimaryKey } from 'src/utils/types';
 

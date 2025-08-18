@@ -5,6 +5,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { RecipeEntity } from './entities/recipe.entity';
 import { IngredientEntity } from './entities/ingredient.entity';
 import { Repository } from 'typeorm';
+import { PrimaryKey } from 'src/utils/types';
 
 @Injectable()
 export class RecipeService
@@ -28,18 +29,18 @@ export class RecipeService
     return this.recipeRepository.find();
   }
 
-  findOne(id: number)
+  findOne(id: PrimaryKey)
   {
-    return `This action returns a #${id} recipe`;
+    return this.recipeRepository.findOneBy({ id });
   }
 
-  update(id: number, updateRecipeDto: UpdateRecipeDto)
+  update(id: PrimaryKey, updateRecipeDto: UpdateRecipeDto)
   {
-    return `This action updates a #${id} recipe`;
+    return this.recipeRepository.update(id, updateRecipeDto);
   }
 
-  remove(id: number)
+  remove(id: PrimaryKey)
   {
-    return `This action removes a #${id} recipe`;
+    return this.recipeRepository.delete(id);
   }
 }

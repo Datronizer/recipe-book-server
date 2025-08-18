@@ -1,4 +1,5 @@
-
+# TODO: We really shouldn't just willy-nilly turn off containers.
+# We should check if they are running and if they are, then use them
 
 
 # Silly goose, you have to terminate containers before starting them again

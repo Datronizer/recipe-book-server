@@ -1,7 +1,7 @@
 import { BaseEntity } from "src/app/base/entities/base.entity";
 import { Column, Entity, ManyToOne } from "typeorm";
-import { IngredientEntity } from "./ingredient.entity";
 import { RecipeEntity } from "src/app/recipe/entities/recipe.entity";
+import { IngredientEntity } from "src/app/ingredient/entities/ingredient.entity";
 
 
 /**

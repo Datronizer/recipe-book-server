@@ -1,7 +1,6 @@
 import { BaseEntity } from "src/app/base/entities/base.entity";
+import { RecipeIngredientEntity } from "src/app/recipe/entities/recipe-ingredient.entity";
 import { Column, Entity, OneToMany } from "typeorm";
-import { Nutrient } from "../abstract/nutrient";
-import { RecipeIngredientEntity } from "./recipe-ingredient.entity";
 
 /**
  * This entity represents 1 ingredient
